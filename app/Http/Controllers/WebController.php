@@ -15,11 +15,15 @@ class WebController extends Controller
         } else {
             $obj = new \stdClass;
             $obj->input = 'INPUT DATA';
-            $obj->param = 'PARAMETER DATA';
+            $obj->param =  $this->getDBData();
 
             // Two ways to pass data to blade template
             // Now, we split the View and Data
             return view('websites.home', ['mytest' => 'TEST'])->with('obj', $obj);
         }
+    }
+
+    private function getDBData(){
+        return json_encode(\DB::table('pages')->first()) ;
     }
 }
