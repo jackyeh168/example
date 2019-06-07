@@ -12,5 +12,5 @@
 
 
 @section('test')
-    <p>This is test.</p>
+    <p>Input Data: {{ $obj->input }} and {{ $obj->param }} and {{ $mytest }} ?></p>
 @endsection

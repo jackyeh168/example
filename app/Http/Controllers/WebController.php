@@ -13,8 +13,13 @@ class WebController extends Controller
         if (!isset ($check) ) {
             return view('welcome');
         } else {
-            return view('websites.home');
+            $obj = new \stdClass;
+            $obj->input = 'INPUT DATA';
+            $obj->param = 'PARAMETER DATA';
+
+            // Two ways to pass data to blade template
+            // Now, we split the View and Data
+            return view('websites.home', ['mytest' => 'TEST'])->with('obj', $obj);
         }
-        
     }
 }
