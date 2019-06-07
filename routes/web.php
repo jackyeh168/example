@@ -12,6 +12,13 @@
 */
 
 Route::get('/', function () {
-    $i=123;
     return view('welcome');
+});
+
+Route::get('/home', function () {
+    return view('websites.home');
+});
+
+Route::get('/login', function () {
+    return view('websites.login');
 });
