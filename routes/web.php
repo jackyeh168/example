@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('websites.home');
-});
+Route::get('/home', 'WebController@web');
 
 Route::get('/login', function () {
     return view('websites.login');
