@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Page;
 
 class WebController extends Controller
 {
@@ -24,6 +25,6 @@ class WebController extends Controller
     }
 
     private function getDBData(){
-        return json_encode(\DB::table('pages')->first()) ;
+        return json_encode(Page::first());
     }
 }
