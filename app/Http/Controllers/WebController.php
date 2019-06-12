@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Page;
+
+// use App\Models\Page;
 
 class WebController extends Controller
 {
@@ -11,7 +12,7 @@ class WebController extends Controller
     public function web(Request $request)
     {
         $check = $request->input('n');
-        if (!isset ($check) ) {
+        if (!isset($check)) {
             return view('welcome');
         } else {
             $obj = new \stdClass;
@@ -24,7 +25,9 @@ class WebController extends Controller
         }
     }
 
-    private function getDBData(){
-        return json_encode(Page::first());
+    private function getDBData()
+    {
+        //return json_encode(Page::first());
+        return 'DBDATA';
     }
 }
